@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap');
+
+*, *::after, *::before {
+    font-family: 'Inconsolata', monospace;
+}
+
+body {
+    background-color: black;
+    color: white;
+    overflow-x: hidden;
+    margin: 0;
+    /* padding: 3vw; */
+}
+
+.container {
+    background-color: grey;
+    transform-origin: top left;
+    transition: transform .5s linear;
+    width: 100vw;
+    min-height: 100vh;
+    padding: 50px;
+}
+
+.container.show-nav {
+    transform: rotate(-20deg);
+}
+
+.circle-container {
+    position: fixed;
+    top: -100px;
+    left: -100px;
+}
+
+.circle {
+    background-color: orange;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    position: relative;
+    transition: transform .5s linear;
+}
+
+.circle button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 100px;
+    background: transparent;
+    border: 0;
+    font-size: 26px;
+    color: white;
+    cursor: pointer;
+}
+
+.circle button:focus {
+    outline: none;
+}
+
+.circle button#open {
+    left: 60%;
+}
+
+:root {
+    --line-border-fill: #9C51B6;
+    --line-border-empty: grey;
+}
