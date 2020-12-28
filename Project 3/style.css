@@ -16,13 +16,13 @@ body {
     background-color: grey;
     transform-origin: top left;
     transition: transform .5s linear;
-    width: 100vw;
+    /* width: 100vw; */
     min-height: 100vh;
     padding: 50px;
 }
 
 .container.show-nav {
-    transform: rotate(-20deg);
+    transform: rotate(-15deg);
 }
 
 .circle-container {
@@ -32,6 +32,17 @@ body {
 }
 
 .circle {
+    background-color: orange;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    position: relative;
+    transition: transform .5s linear;
+}
+
+/* when container has the show-nav class then do something */
+.container.show-nav .circle-container.circle {
+    transform: rotate(-70deg);
     background-color: orange;
     height: 200px;
     width: 200px;
@@ -60,7 +71,70 @@ body {
     left: 60%;
 }
 
-:root {
-    --line-border-fill: #9C51B6;
-    --line-border-empty: grey;
+.circle button#close {
+    top: 60%;
+    transform: rotate(90deg);
+    transform-origin: top left;
 }
+
+.container.show-nav + nav li {
+    transform: translateX(0);
+    transition-delay: .3s;
+}
+
+nav {
+    position: fixed;
+    bottom: 40px;
+    left: 0;
+    z-index: 100;
+}
+
+nav ul {
+    list-style-type: none;
+    padding-left: 30px;
+}
+
+nav ul li {
+    text-transform: uppercase;
+    margin: 40px 0;
+    transform: translateX(-100%);
+    transition: transform .4s ease-in;
+}
+
+nav ul li i {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+/* this is to create a cascade with the li elements */
+nav ul li + li {
+    margin-left: 15px;
+    transform: translateX(-150%);
+}
+
+nav ul li + li + li {
+    margin-left: 30px;
+    transform: translateX(-200%);
+}
+
+.content img {
+    max-width: 100%;
+    justify-self: center;
+    align-self: center;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    max-width: 1000px;
+    margin: 50px auto;
+}
+
+.content h1 {
+    margin: 0;
+}
+
+.content p {
+    line-height: 1.5;
+}
+
